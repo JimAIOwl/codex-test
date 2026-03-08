@@ -24,6 +24,7 @@ const quotes = [
 const quoteText = document.getElementById("quoteText");
 const quoteAuthor = document.getElementById("quoteAuthor");
 const newQuoteBtn = document.getElementById("newQuoteBtn");
+const themeToggleBtn = document.getElementById("themeToggleBtn");
 
 function displayRandomQuote() {
   const randomIndex = Math.floor(Math.random() * quotes.length);
@@ -33,4 +34,14 @@ function displayRandomQuote() {
   quoteAuthor.textContent = `— ${quote.author}`;
 }
 
+function toggleTheme() {
+  const isDarkMode = document.body.classList.toggle("dark-mode");
+
+  themeToggleBtn.textContent = isDarkMode
+    ? "Switch to Light Mode"
+    : "Switch to Dark Mode";
+  themeToggleBtn.setAttribute("aria-pressed", String(isDarkMode));
+}
+
 newQuoteBtn.addEventListener("click", displayRandomQuote);
+themeToggleBtn.addEventListener("click", toggleTheme);

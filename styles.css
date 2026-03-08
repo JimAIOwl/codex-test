@@ -14,6 +14,7 @@ body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #e0f7fa, #f3e5f5);
   color: #1f2937;
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .quote-card {
@@ -23,6 +24,7 @@ body {
   background: #ffffff;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 h1 {
@@ -41,6 +43,14 @@ blockquote {
   margin-bottom: 1.5rem;
   color: #4b5563;
   font-style: italic;
+  transition: color 0.25s ease;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
 button {
@@ -52,7 +62,7 @@ button {
   cursor: pointer;
   background-color: #7c3aed;
   color: #fff;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease;
 }
 
 button:hover {
@@ -62,4 +72,27 @@ button:hover {
 
 button:active {
   transform: translateY(0);
+}
+
+body.dark-mode {
+  color-scheme: dark;
+  background: linear-gradient(135deg, #0f172a, #312e81);
+  color: #e5e7eb;
+}
+
+body.dark-mode .quote-card {
+  background: #111827;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+}
+
+body.dark-mode .author {
+  color: #cbd5e1;
+}
+
+body.dark-mode button {
+  background-color: #8b5cf6;
+}
+
+body.dark-mode button:hover {
+  box-shadow: 0 8px 16px rgba(139, 92, 246, 0.3);
 }
